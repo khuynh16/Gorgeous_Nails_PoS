@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="./images/checkout-logo.png" alt="checkout-logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="checkout-page.html">Checkout<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin-login.html">Admin Page</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container checkout-page">
+        <div class="row">
+            <!-- the righthand side of the page: the list of items checked out + price -->
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted yourCart">Your cart (empty)</span>
+                    <span class="badge badge-secondary badge-pill cartNumItems">0</span>
+                </h4>
+                <ul class="list-group mb-3 selected-orders">
+                    <!-- when orders are added, the list will be filled here -->
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                        <strong class="totalCost">$0</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Left hand side of page: the checkout section -->
+            <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Employee & Customer</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="employee" class="labelText">Employee</label>
+                        <select class="custom-select d-block w-100" id="employee" required>
+                        <option value="">Choose...</option>
+                        <!-- employees from database will be entered here -->
+                        </select>
+                    </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName" class="labelText">Customer Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                    Valid last name is required.
+                    </div>
+                </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <h4 class="mb-3">Services</h4>                
+        
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nails" class="labelText">Nails</label>
+                    <select class="custom-select d-block w-100 d-flex justify-content-between nailsList" id="nails" required>
+                        <option value="default">Choose...</option>
+                        <!-- other options from database are entered here -->
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="pedicure" class="labelText">Pedicure</label>
+                    <select class="custom-select d-block w-100" id="pedicure" required>
+                        <option value="default">Choose...</option>
+                        <!-- other options from database are entered here -->
+                    </select>
+                </div>
+                
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3 text-center">
+                        <button type="button" class="btn btn-info" id="addNailsOrder">Add Nails Order</button>
+                    </div>
+                    <div class="col-md-6 mb-3 text-center">
+                        <button type="button" class="btn btn-info" id="addPedicureOrder">Add Pedicure Order</button>
+                    </div>
+                </div>
+                
+                <hr class="mb-4">
+                
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Submit Order</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="js/checkout.js"></script>
+    <script src="js/getNails.js"></script>
+    <script src="js/getPedicure.js"></script>
+    <script src="js/getEmployees.js"></script>
+    <script src="js/checkout-add-order.js"></script>
+    <script src="js/checkout-delete-order.js"></script>
+
+</body>
+</html>

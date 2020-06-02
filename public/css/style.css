@@ -1,0 +1,41 @@
+.checkout-page {
+    margin-top: 60px;
+}
+
+select.selector .cost-in-list {
+    float: right;
+    text-align: right;
+}
+
+.deleteBtn {
+    border-radius: 25% 25% 25% 25%;
+    padding: 2px;
+}
+
+.col-10, .col-2 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.pCost {
+    margin-right: 12px;
+}
+
+.navbar {
+    padding: 0px 16px;
+}
+
+.login-container {
+	margin-top: 50px;
+	padding: 20px 15px 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #ccc;
+}
+
+.login-container h1 {
+    text-align: center;
+}
+
+.labelText {
+    font-size: 20px;
+}
