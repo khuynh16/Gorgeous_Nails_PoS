@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // adding each employee from database into the option element
     employee.forEach((option) => {
-        let optionHTML = `<option value="">${option.firstname} ${option.lastname}</option>`;
+        // let optionHTML = `<option value="">${option.firstname} ${option.lastname}</option>`;
+        let optionHTML = `<li class="list-group-item">* ${option.firstname} ${option.lastname}</li>`;
         employee_list.insertAdjacentHTML('beforeend', optionHTML);
     })
 
