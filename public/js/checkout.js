@@ -26,16 +26,9 @@
 
         // adding each employee from database into the option element
         employee.forEach((option) => {
-            let optionHTML = `<option value="">${option.first_name} ${option.last_name}</option>`;
+            let optionHTML = `<option value="">${option.firstname} ${option.lastname}</option>`;
             employee_list.insertAdjacentHTML('beforeend', optionHTML);
         })
-
-
-        
-
-
-
-
     })
 
 

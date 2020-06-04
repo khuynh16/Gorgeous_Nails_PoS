@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
     <title>Admin Access Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="/css/home-and-admin-page.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
     <!-- navigation bar at the top of page -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light home-nav">
-        <a class="navbar-brand" href="index.html"><img src="./images/checkout-logo.png" alt="checkout-logo"></a>
+        <a class="navbar-brand" href="index.html"><img src="../images/checkout-logo.png" alt="checkout-logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,37 +27,37 @@
         </div>
     </nav>
 
-    <!-- stuff here -->
-    <div class="d-flex align-items-center admin-container">
-        <div class="container admin-container">
-            <div class="row justify-content-center mb-4">
-                <button onclick="window.location.href='admin-employees'" type="button" class="btn btn-success col-2 home-page-button mr-4">
-                    Add Employees 
-                </button>
-                <button onclick="window.location.href='admin-login'" type="button" class="btn btn-danger col-2 home-page-button ml-4">
-                    Remove Employees
-                </button>
-            </div>
-            <div class="row justify-content-center mb-4">
-                <button onclick="window.location.href='checkout-page'" type="button" class="btn btn-success col-2 home-page-button mr-4">
-                    Add Services
-                </button>
-                <button onclick="window.location.href='admin-login'" type="button" class="btn btn-danger col-2 home-page-button ml-4">
-                    Remove Services
-                </button>
-            </div>
-            <!-- buttons to add:
-                    edit service details:
-                    edit manager details:
-                    view employee weekly payout:
-                    view orders:
-             -->
+    <!-- stuff goes here -->
+
+    <div class="container row page-wrapper">
+        <div class="col-6">
+            <h2>Current Employees</h2>
+            <!-- <label for="currentEmployees" class="labelText">Employee</label> -->
+            <select class="custom-select d-block w-100" id="currentEmployees" required>
+                <option value="">Choose...</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <h2>Enter Employee Name</h2>
+            <form class="create-employee-form">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" id="first-name" placeholder="First name">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" id="last-name" placeholder="Last name">
+                </div>
+                <button class="btn btn-primary">Add New Employee</button>
+            </form>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="admin/getEmployees.js"></script>
+    <script src="admin/addEmployees.js"></script>
 </body>
 </html>

@@ -4,9 +4,9 @@ let Schema = mongoose.Schema;
 
 // schema for employees
 let employeeSchema = new Schema({
-    id: Number,
-    name: String,
-    name: String
+    id: String,
+    firstname: String,
+    lastname: String
 });
 
 // convert schema into class, which will create documents

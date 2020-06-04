@@ -16,8 +16,8 @@ let Employee = require('./models/employees').Employee;
 // exported value for manager collection from managers.js, working with key value: Manager
 let Manager = require('./models/managers').Manager;
 
-                                        // // router for nails services
-                                        // let nailsRouter = require('./routes/getNails');
+// unique id package
+let uniqid = require('uniqid');
 
 mongoose.connect('mongodb://localhost/gorgeous_nails', { useNewUrlParser: true });
 
@@ -65,6 +65,20 @@ app.post('/admin-login', async (req, resp) => {
     }
 })
 
+// adding new employee to database
+app.post('/employees', async (req, resp) => {
+
+    let reqBody = req.body;
+
+    let newEmployee = new Employee({
+        id: uniqid(),
+        firstname: reqBody.firstname,
+        lastname: reqBody.lastname
+    })
+    await newEmployee.save();
+    resp.send('Created');
+})
+
 // render admin-page
 app.get('/admin-page', (req, resp) => {
     resp.render('admin-page');
@@ -73,6 +87,11 @@ app.get('/admin-page', (req, resp) => {
 // render admin-login page
 app.get('/admin-login', (req, resp) => {
     resp.render('admin-login');
+})
+
+// render admin-employees page
+app.get('/admin-employees', (req, resp) => {
+    resp.render('admin-employees');
 })
 
 // connects to the index.html file and loads it

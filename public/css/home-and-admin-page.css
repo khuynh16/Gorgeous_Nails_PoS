@@ -1,0 +1,31 @@
+/* Styling for home page (index.html) */
+
+.container .button-row {
+    margin-top: 40px;
+}
+
+.home-nav > img {
+    height: 120px;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styling for admin page */
+
+.admin-container {
+    padding-top: 100px;                  
+}
+
+/* Styling for BOTH home page and admin page */
+
+body {
+    background-color: #80A5A0;
+    overflow: hidden;
+}
