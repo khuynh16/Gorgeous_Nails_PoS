@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
     <title>Admin Access Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="/css/home-and-admin-page.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -20,44 +20,103 @@
                 <li class="nav-item">
                     <a class="nav-link" href="checkout-page.html">Checkout<span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-login">Admin Login</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="admin-login">Admin Page</a>
+                    <a class="nav-link" href="admin-page">Admin Access</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- stuff here -->
-    <div class="d-flex align-items-center admin-container">
-        <div class="container admin-container">
-            <div class="row justify-content-center mb-4">
-                <button onclick="window.location.href='admin-employees'" type="button" class="btn btn-success col-2 home-page-button mr-4">
-                    Add Employees 
-                </button>
-                <button onclick="window.location.href='admin-login'" type="button" class="btn btn-danger col-2 home-page-button ml-4">
-                    Remove Employees
-                </button>
+    <div class="tab-content" id="v-pills-tabContent">
+
+        <!-- first tab, the main buttons for admin -->
+        <div class="tab-pane fade show active" id="v-pills-admin-main" role="tabpanel" aria-labelledby="v-pills-admin-main-tab">
+            <div class="d-flex align-items-center admin-container">
+                <div class="container admin-container">
+                    <div class="row justify-content-center mb-4">
+                        <button type="button" id="addEmpBtn" class="btn btn-success col-2 admin-page-button mr-4">
+                            Add Employees 
+                        </button>
+                        <button type="button" id ="removeEmpBtn" class="btn btn-danger col-2 admin-page-button ml-4">
+                            Remove Employees
+                        </button>
+                    </div>
+                    <div class="row justify-content-center mb-4">
+                        <button onclick="window.location.href='checkout-page'" type="button" class="btn btn-success col-2 admin-page-button mr-4">
+                            Add Services
+                        </button>
+                        <button onclick="window.location.href='admin-login'" type="button" class="btn btn-danger col-2 admin-page-button ml-4">
+                            Remove Services
+                        </button>
+                    </div>
+                    <!-- buttons to add:
+                            edit service details:
+                            edit manager details:
+                            view employee weekly payout:
+                            view orders:
+                     -->
+                </div>
             </div>
-            <div class="row justify-content-center mb-4">
-                <button onclick="window.location.href='checkout-page'" type="button" class="btn btn-success col-2 home-page-button mr-4">
-                    Add Services
-                </button>
-                <button onclick="window.location.href='admin-login'" type="button" class="btn btn-danger col-2 home-page-button ml-4">
-                    Remove Services
-                </button>
-            </div>
-            <!-- buttons to add:
-                    edit service details:
-                    edit manager details:
-                    view employee weekly payout:
-                    view orders:
-             -->
         </div>
+
+        <!-- second tab, adding employees -->
+        <div class="tab-pane fade" id="v-pills-add-employee" role="tabpanel" aria-labelledby="v-pills-add-employee-tab">
+            <div class="container row page-wrapper">
+                <div class="col-6">
+                    <h2>Current Employees</h2>
+                    <ul class="list-group list-group-flush currentEmployees">
+                         <!-- li elements will end up here, resembling current employees  -->
+                    </ul> 
+                </div>
+                <div class="col-6">
+                    <h2>Enter Employee Name</h2>
+                    <form class="create-employee-form">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" class="form-control" id="first-name" placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" class="form-control" id="last-name" placeholder="Last name">
+                        </div>
+                        <button class="btn btn-primary">Add New Employee</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- third tab, removing employees -->
+        <div class="tab-pane fade" id="v-pills-remove-employee" role="tabpanel" aria-labelledby="v-pills-remove-employee-tab">
+            <div class="container row page-wrapper">
+                <div class="col-6">
+                    <h2>Current Employees</h2>
+                    <select class="custom-select d-block w-100 currentEmployees2" required>
+                        <option value="">Choose...</option>
+                        <!-- employees from database will be entered here -->
+                    </select>
+                </div>
+                <div class="col-6 text-center">
+                    <button class="btn btn-primary">Remove Employee</button>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+    
+    
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="admin/getEmployees.js"></script>
+    <script src="admin/addEmployees.js"></script>
+    <script src="admin/main.js"></script>
 </body>
 </html>

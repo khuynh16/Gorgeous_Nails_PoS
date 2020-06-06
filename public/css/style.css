@@ -12,7 +12,7 @@ select.selector .cost-in-list {
     padding: 2px;
 }
 
-.col-10, .col-2 {
+.col-2, .col-10  {
     display: flex;
     flex-wrap: nowrap;
 }
@@ -52,5 +52,20 @@ select.selector .cost-in-list {
 .page-wrapper h2 {
 	text-align: center;
 	margin-bottom: 20px;
+}
+
+.admin-container {
+    padding-top: 100px;                  
+}
+
+.admin-page-button {
+    text-align: center;
+    display: block;
+}
+
+/* vertically center rows */
+.row {
+    display: flex;
+    align-items: center;
 }
 
