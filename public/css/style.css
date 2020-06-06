@@ -64,7 +64,7 @@ select.selector .cost-in-list {
 }
 
 /* vertically center rows */
-.row {
+.main-remove-block {
     display: flex;
     align-items: center;
 }

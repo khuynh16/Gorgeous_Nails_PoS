@@ -79,6 +79,13 @@ app.post('/employees', async (req, resp) => {
     resp.send('Created');
 })
 
+// deletes employee (in remove employees admin page)
+app.delete('/employees/:id', async (req, resp) =>  {
+    let id = req.params.id;
+    await Employee.deleteOne({id: id});
+    resp.send('Deleted!');
+})
+
 // render admin-page
 app.get('/admin-page', (req, resp) => {
     resp.render('admin-page');
