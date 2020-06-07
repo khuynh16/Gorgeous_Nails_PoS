@@ -109,7 +109,7 @@
         <div class="tab-pane fade" id="v-pills-add-service" role="tabpanel" aria-labelledby="v-pills-add-service-tab">
             <div class="container row page-wrapper main-remove-block">
                 <div class="col-6">
-                    <h4>Current Services</h4>
+                    <h2>Current Services</h2>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="nails-tab" data-toggle="tab" href="" role="tab" aria-controls="" aria-selected="true">Nails</a>
@@ -123,33 +123,58 @@
                         <!-- the nails tab -->
                         <div class="tab-pane fade show active" id="nailsTab" role="tabpanel" aria-labelledby="nails-tab">
                             <div class="list-group-item d-flex justify-content-between lh-condensed">
-                                <h6 class="my-0 px-0 col-9"><i>Name</i></h6>
-                                <span class="text-muted col-2 pl-0 pCost"><i>Cost</i></span>
+                                <h5 class="my-0 px-0 col-9"><u><i>Name</i></u></h5>
+                                <h5 class="col-2 pl-0 pCost"><u><i>Cost</i></u></h5>
                             </div>
-                            <!-- this section should get getting current nails options -->
                             <ul class="list-group list-group-flush currentNails">
                                 <!-- li elements will end up here, resembling current nail services  -->
                            </ul> 
                         </div>
                         <!-- the pedicure tab -->
                         <div class="tab-pane fade" id="pedicureTab" role="tabpanel" aria-labelledby="pedicure-tab">
-                            <h4>Pedicure tab here</h4>
+                            <div class="list-group-item d-flex justify-content-between lh-condensed">
+                                <h5 class="my-0 px-0 col-9"><u><i>Name</i></u></h5>
+                                <h5 class="col-2 pl-0 pCost"><u><i>Cost</i></u></h5>
+                            </div>
+                            <ul class="list-group list-group-flush currentPedicure">
+                                <!-- li elements will end up here, resembling current pedicure services  -->
+                            </ul>
                         </div>
                     </div>
                     
                 </div>
+                <!-- right hand side of the add services page -->
                 <div class="col-6">
-                    <h4>Goodbye</h4>
+                    <h2>Enter Service Details</h2>
+                    <form class="add-service-form">
+                        <!-- category selection of the new service -->
+                        <div class="form-group">
+                            <label for="service-category" class="categoryText">Select Service Category</label>
+                            <select class="custom-select d-block w-100" id="service-category" required>
+                                <option value="">Choose...</option>
+                                <option value="">Nails</option>
+                                <option value="">Pedicure</option>
+                            </select>
+                        </div>
+                        <!-- entering of new service name -->
+                        <div class="form-group">
+                            <label for="service-name">Service Name</label>
+                            <input type="text" class="form-control" id="service-name" placeholder="Name">
+                        </div>
+                        <!-- entering  of new service cost -->
+                        <div class="form-group">
+                            <label for="service-cost">Service Cost (in USD $)</label>
+                            <input type="text" class="form-control" id="service-cost" placeholder="Cost">
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Add Service</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-
     </div>
     
-    
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -158,6 +183,7 @@
     <script src="admin/addEmployees.js"></script>
     <script src="admin/removeEmployees.js"></script>
     <script src="admin/getNails.js"></script>
+    <script src="admin/getPedicure.js"></script>
     <script src="admin/main.js"></script>
 </body>
 </html>
