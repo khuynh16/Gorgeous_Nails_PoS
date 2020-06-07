@@ -86,6 +86,8 @@ app.delete('/employees/:id', async (req, resp) =>  {
     resp.send('Deleted!');
 })
 
+// add nail or pedicure service to database
+
 // render admin-page
 app.get('/admin-page', (req, resp) => {
     resp.render('admin-page');

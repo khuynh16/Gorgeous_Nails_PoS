@@ -4,12 +4,11 @@ async function getEmployees() {
                         .then((data) => data);
 }
 
+// retrieve employees from database to fill out option element in adding employees page
 document.addEventListener('DOMContentLoaded', async function() {
-    // retrieve employees from database to fill out option element in adding employees page
-
     //NOTE: this section is to fill out list on add employees admin page section
-    let employee = await getEmployees();                                        // current employees from database
-    let employee_list = document.querySelector('.currentEmployees');   // option element of current employees
+    let employee = await getEmployees();                                 // current employees from database
+    let employee_list = document.querySelector('.currentEmployees');     // option element of current employees
     // adding each employee from database into the option element
     employee.forEach((option) => {
         let optionHTML = `<li class="list-group-item">* ${option.firstname} ${option.lastname}</li>`;

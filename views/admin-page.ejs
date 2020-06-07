@@ -122,8 +122,14 @@
                     <div class="tab-content" id="add-services-tab-content">
                         <!-- the nails tab -->
                         <div class="tab-pane fade show active" id="nailsTab" role="tabpanel" aria-labelledby="nails-tab">
-                            <h4>Nails tab here</h4>
+                            <div class="list-group-item d-flex justify-content-between lh-condensed">
+                                <h6 class="my-0 px-0 col-9"><i>Name</i></h6>
+                                <span class="text-muted col-2 pl-0 pCost"><i>Cost</i></span>
+                            </div>
                             <!-- this section should get getting current nails options -->
+                            <ul class="list-group list-group-flush currentNails">
+                                <!-- li elements will end up here, resembling current nail services  -->
+                           </ul> 
                         </div>
                         <!-- the pedicure tab -->
                         <div class="tab-pane fade" id="pedicureTab" role="tabpanel" aria-labelledby="pedicure-tab">
@@ -151,6 +157,7 @@
     <script src="admin/getEmployees.js"></script>
     <script src="admin/addEmployees.js"></script>
     <script src="admin/removeEmployees.js"></script>
+    <script src="admin/getNails.js"></script>
     <script src="admin/main.js"></script>
 </body>
 </html>
