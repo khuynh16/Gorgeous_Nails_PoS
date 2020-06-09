@@ -4,7 +4,7 @@ async function getEmployees() {
                         .then((data) => data);
 }
 
-// retrieve employees from database to fill out option element in adding employees page
+// retrieve employees from database to fill out option element
 document.addEventListener('DOMContentLoaded', async function() {
     //NOTE: this section is to fill out list on add employees admin page section
     let employee = await getEmployees();                                 // current employees from database

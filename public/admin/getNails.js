@@ -4,12 +4,12 @@ async function getNails() {
                         .then((data) => data);
 }
 
+// fills out nails options from database into certain pages when page loads
 document.addEventListener('DOMContentLoaded', async function() {
 
-    //NOTE: this section is to fill out nails tab on remove employees admin page section
+    //NOTE: this section is to fill out nails tab on add services admin page section
     let nails = await getNails();
     let nails_tab = document.querySelector('.currentNails');
-
     nails.forEach((service) => {
         let serviceHTML =   `<li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <h6 class="my-0 px-0 col-9">${service.name}</h6>
@@ -18,4 +18,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         nails_tab.insertAdjacentHTML('beforeend', serviceHTML);
     })
 
+    //NOTE: this section is to fill out nails select element on remove services admin page section
+    let nails2 = await getNails();
+    let nails_select = document.querySelector('.currentNails2');
+    nails2.forEach((service) => {
+        let serviceHTML = `<option class="id" value="${service.id}">${service.name} ... $${service.cost.toFixed(2)}</option>`;
+        nails_select.insertAdjacentHTML('beforeend', serviceHTML);
+    })
 })

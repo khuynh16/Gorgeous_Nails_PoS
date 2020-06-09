@@ -17,4 +17,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                             </li>`;
         pedicure_tab.insertAdjacentHTML('beforeend', serviceHTML);
     })
+
+    //NOTE: this section is to fill out pedicure tab on add services admin page section
+    let pedicure2 = await getPedicure();
+    let pedicure_select = document.querySelector('.currentPedicure2');
+    pedicure2.forEach((service) => {
+        let serviceHTML = `<option class="id" value="${service.id}">${service.name} ... $${service.cost.toFixed(2)}</option>`;
+        pedicure_select.insertAdjacentHTML('beforeend', serviceHTML);
+    })
 })

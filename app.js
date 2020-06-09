@@ -67,7 +67,6 @@ app.post('/admin-login', async (req, resp) => {
 
 // adding new employee to database
 app.post('/employees', async (req, resp) => {
-
     let reqBody = req.body;
 
     let newEmployee = new Employee({
@@ -86,7 +85,46 @@ app.delete('/employees/:id', async (req, resp) =>  {
     resp.send('Deleted!');
 })
 
-// add nail or pedicure service to database
+// add nail service to database
+app.post('/nails', async (req, resp) => {
+    let reqBody = req.body;
+
+    let newNails = new Nail_service({
+        id: uniqid(),
+        name: reqBody.name,
+        cost: reqBody.cost
+    })
+    await newNails.save();
+    resp.send('Created');
+})
+
+// add pedicure service to database
+app.post('/pedicure', async (req, resp) => {
+    let reqBody = req.body;
+
+    let newPedicure = new Pedicure_service({
+        id: uniqid(),
+        name: reqBody.name,
+        cost: reqBody.cost
+    })
+    await newPedicure.save();
+    resp.send('Created');
+})
+
+// delete nail service (in remove service admin page)
+app.delete('/nails/:id', async (req, resp) =>  {
+    let id = req.params.id;
+    await Nail_service.deleteOne({id: id});
+    resp.send('Deleted!');
+})
+
+// delete pedicure service (in remove service admin page)
+app.delete('/pedicure/:id', async (req, resp) =>  {
+    let id = req.params.id;
+    await Pedicure_service.deleteOne({id: id});
+    resp.send('Deleted!');
+})
+
 
 // render admin-page
 app.get('/admin-page', (req, resp) => {

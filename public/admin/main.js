@@ -1,17 +1,19 @@
 let addEmpBtn = document.querySelector('#addEmpBtn');
 let removeEmpBtn = document.querySelector('#removeEmpBtn');
 let addServiceBtn = document.querySelector('#addServiceBtn');
+let removeServiceBtn = document.querySelector('#removeServiceBtn');
 
 let addEmpTab = document.getElementById('v-pills-add-employee');
 let removeEmpTab = document.getElementById('v-pills-remove-employee');
 let adminBtnsTab = document.getElementById('v-pills-admin-main');
 let addServiceTab = document.getElementById('v-pills-add-service');
+let removeServiceTab = document.getElementById('v-pills-remove-service');
 
 // selected tab in the add services page in the admin section
 let nailsTabSelected = document.querySelector('#nails-tab');
 let pedicureTabSelected = document.querySelector('#pedicure-tab');
 
-// to add/remove 'show' and 'active' class to this to reveal; shows the content of the tabs
+// to add/remove 'show' and 'active' class to this element to reveal; shows the content of the tabs
 let nailsTab = document.getElementById('nailsTab');
 let pedicureTab = document.getElementById('pedicureTab');
 
@@ -46,6 +48,11 @@ addServiceBtn.addEventListener('click', function() {
     displayCurrentTab(addServiceTab);
 })
 
+// when 'remove services' button is clicked, show remove services tab
+removeServiceBtn.addEventListener('click', function() {
+    displayCurrentTab(removeServiceTab);
+})
+
 // add or remove 'show' and 'active' class from tabs, whether to be visible or not
 function displayCurrentTab(tab) {
 
@@ -61,6 +68,8 @@ function displayCurrentTab(tab) {
          adminBtnsTab.classList.remove('active');
          addServiceTab.classList.remove('show');
          addServiceTab.classList.remove('active');
+         removeServiceTab.classList.remove('show');
+         removeServiceTab.classList.remove('active');
     } else if (tab === removeEmpTab) {
          addEmpTab.classList.remove('show');
          addEmpTab.classList.remove('active');
@@ -68,6 +77,8 @@ function displayCurrentTab(tab) {
          adminBtnsTab.classList.remove('active');
          addServiceTab.classList.remove('show');
          addServiceTab.classList.remove('active');
+         removeServiceTab.classList.remove('show');
+         removeServiceTab.classList.remove('active');
     } else if (tab === addServiceTab) {
         addEmpTab.classList.remove('show');
         addEmpTab.classList.remove('active');
@@ -75,6 +86,17 @@ function displayCurrentTab(tab) {
         removeEmpTab.classList.remove('active');
         adminBtnsTab.classList.remove('show');
         adminBtnsTab.classList.remove('active');
+        removeServiceTab.classList.remove('show');
+        removeServiceTab.classList.remove('active');
+    } else if (tab === removeServiceTab) {
+        addEmpTab.classList.remove('show');
+        addEmpTab.classList.remove('active');
+        removeEmpTab.classList.remove('show');
+        removeEmpTab.classList.remove('active');
+        adminBtnsTab.classList.remove('show');
+        adminBtnsTab.classList.remove('active');
+        addServiceTab.classList.remove('show');
+        addServiceTab.classList.remove('active');
     }
 }
 

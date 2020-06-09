@@ -18,7 +18,6 @@ employeesBlock.addEventListener('click', function(e) {
                 method: 'DELETE'
             }).then((resp) => resp.text())
             .then(() => window.history.go());
-
         }
 
 

@@ -4,7 +4,7 @@ let Schema = mongoose.Schema;
 
 // schema for the pedicure services
 let pedicureServicesSchema = new Schema({
-    id: Number,
+    id: String,
     name: String,
     cost: Number
 });

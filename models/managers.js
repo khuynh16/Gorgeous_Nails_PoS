@@ -4,7 +4,7 @@ let Schema = mongoose.Schema;
 
 // schema for managers
 let managerSchema = new Schema({
-    id: Number,
+    id: String,
     username: String,
     password: String
 });

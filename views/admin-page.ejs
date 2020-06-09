@@ -49,7 +49,7 @@
                         <button type="button" id="addServiceBtn" class="btn btn-success col-2 admin-page-button mr-4">
                             Add Services
                         </button>
-                        <button onclick="window.location.href='admin-login'" type="button" class="btn btn-danger col-2 admin-page-button ml-4">
+                        <button type="button" id="removeServiceBtn" class="btn btn-danger col-2 admin-page-button ml-4">
                             Remove Services
                         </button>
                     </div>
@@ -83,7 +83,10 @@
                             <label for="last-name">Last Name</label>
                             <input type="text" class="form-control" id="last-name" placeholder="Last name">
                         </div>
-                        <button class="btn btn-primary">Add New Employee</button>
+                        <div class="text-center">
+                            <button class="btn btn-primary">Add New Employee</button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>
@@ -92,16 +95,18 @@
         <!-- third tab, removing employees -->
         <div class="tab-pane fade" id="v-pills-remove-employee" role="tabpanel" aria-labelledby="v-pills-remove-employee-tab">
             <div class="container row page-wrapper main-remove-block">
+                <div class="col"></div>
                 <div class="col-6">
                     <h2>Current Employees</h2>
-                    <select class="custom-select d-block w-100 currentEmployees2" required>
+                    <select class="custom-select d-block w-100 mt-5 currentEmployees2" required>
                         <option value="">Choose...</option>
                         <!-- employees from database will be entered here -->
                     </select>
+                    <div class="text-center mt-5">
+                        <button class="btn btn-primary remove-btn">Remove Employee</button>
+                    </div>
                 </div>
-                <div class="col-6 text-center">
-                    <button class="btn btn-primary remove-btn">Remove Employee</button>
-                </div>
+                <div class="col"></div>
             </div>
         </div>
 
@@ -173,6 +178,38 @@
                 </div>
             </div>
         </div>
+
+        <!-- 5th tab, removing a service (either nails or pedicure) -->
+        <div class="tab-pane fade" id="v-pills-remove-service" role="tabpanel" aria-labelledby="v-pills-remove-service-tab">
+            <div class="container row page-wrapper remove-service-block">
+                <div class="col"></div>
+                <!-- left hand side of remove services page -->
+                <div class="col-6">
+                    <h2>Current Services</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="currentNails2" class="labelText">Nails</label>
+                            <select class="custom-select d-block w-100 currentNails2" required>
+                                <option value="">Choose...</option>
+                                <!-- nails options from database will be entered here -->
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="currentPedicure2" class="labelText">Pedicure</label>
+                            <select class="custom-select d-block w-100 currentPedicure2" required>
+                                <option value="">Choose...</option>
+                                <!-- pedicure options from database will be entered here -->
+                            </select>
+                        </div>
+                    </div>
+                    <!-- right hand side of the remove services page -->
+                    <div class="text-center mt-5">
+                        <button class="btn btn-primary remove-service">Remove Service</button>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -184,6 +221,8 @@
     <script src="admin/removeEmployees.js"></script>
     <script src="admin/getNails.js"></script>
     <script src="admin/getPedicure.js"></script>
+    <script src="admin/addService.js"></script>
+    <script src="admin/removeService.js"></script>
     <script src="admin/main.js"></script>
 </body>
 </html>
