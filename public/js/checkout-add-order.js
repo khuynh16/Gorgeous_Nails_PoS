@@ -23,7 +23,7 @@ $(document).ready(function() {
         selectedNailOption = $( '#nails option:selected' ).text();
 
         // get just product name from option
-        productName = selectedNailOption.substr(0, selectedNailOption.indexOf('...'));
+        productName = selectedNailOption.substr(0, selectedNailOption.indexOf('...') - 1);
 
         // if productName is the first default value, do nothing; else, do all computations below
         if (productName == 'Choose') {
@@ -40,7 +40,8 @@ $(document).ready(function() {
 
             // newly created list item; to be entered into already existing list
             let elem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <h6 class="my-0 px-0 col-9">${productName}</h6>
+                            <input type="hidden" class="cName" value="nails">
+                            <h6 class="my-0 px-0 col-9 pName">${productName}</h6>
                             <span class="text-muted col-2 pl-0 pCost">${productCost}</span>
                             <button type="button" class="btn btn-danger btn-sm deleteBtn col-1">x</button>
                         </li>`;
@@ -77,7 +78,7 @@ $(document).ready(function() {
         selectedPedicureOption = $( '#pedicure option:selected' ).text();
 
         // get just product name from option
-        productName = selectedPedicureOption.substr(0, selectedPedicureOption.indexOf('...'));
+        productName = selectedPedicureOption.substr(0, selectedPedicureOption.indexOf('...') - 1);
 
         // if productName is the first default value, do nothing; else, do all computations below
         if (productName == 'Choose') {
@@ -94,7 +95,8 @@ $(document).ready(function() {
 
             // newly created list item; to be entered into already existing list
             let elem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <h6 class="my-0 px-0 col-9">${productName}</h6>
+                            <input type="hidden" class="cName" value="pedicure">
+                            <h6 class="my-0 px-0 col-9 pName">${productName}</h6>
                             <span class="text-muted col-2 pl-0 pCost">${productCost}</span>
                             <button type="button" class="btn btn-danger btn-sm deleteBtn col-1">x</button>
                         </li>`;

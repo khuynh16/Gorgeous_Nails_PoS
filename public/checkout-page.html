@@ -46,7 +46,7 @@
             <!-- Left hand side of page: the checkout section -->
             <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Employee & Customer</h4>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation submit-order-form" novalidate>
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="employee" class="labelText">Employee</label>
@@ -56,8 +56,8 @@
                         </select>
                     </div>
                 <div class="col-md-6 mb-3">
-                    <label for="lastName" class="labelText">Customer Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <label for="customer" class="labelText">Customer Name</label>
+                    <input type="text" class="form-control" id="customer" placeholder="" value="" required>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
@@ -113,6 +113,7 @@
     <script src="js/getEmployees.js"></script>
     <script src="js/checkout-add-order.js"></script>
     <script src="js/checkout-delete-order.js"></script>
+    <script src="create-order.js"></script>
 
 </body>
 </html>

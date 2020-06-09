@@ -1,4 +1,4 @@
-// connect mongoose to app.js file
+// connect mongoose to file
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 

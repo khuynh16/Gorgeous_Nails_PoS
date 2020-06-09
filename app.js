@@ -9,12 +9,12 @@ let mongoose = require('mongoose');
 let Nail_service = require('./models/nails_services').Nail_service;
 // exported value for pedicure service collection from pedicure_services.js, working with key value: Pedicure_service
 let Pedicure_service = require('./models/pedicure_services').Pedicure_service;
-
 // exported value for employee collection from employees.js, working with key value: Employee
 let Employee = require('./models/employees').Employee;
-
 // exported value for manager collection from managers.js, working with key value: Manager
 let Manager = require('./models/managers').Manager;
+// exported value for order collection from orders.js, working with key value: Order
+let Order = require('./models/orders').Order;
 
 // unique id package
 let uniqid = require('uniqid');
@@ -53,9 +53,7 @@ app.get('/employees', async (req, resp) => {
 app.post('/admin-login', async (req, resp) => {
     let username = req.body.username;
     let password = req.body.password;
-    console.log(username + ' ' + password);
     let manager = await Manager.find().where({username: username}).where({password: password});
-    console.log(manager);
     if (manager.length > 0) {
         resp.send({
             redirectURL: '/admin-page'
@@ -123,6 +121,25 @@ app.delete('/pedicure/:id', async (req, resp) =>  {
     let id = req.params.id;
     await Pedicure_service.deleteOne({id: id});
     resp.send('Deleted!');
+})
+
+// add order (in checkout page) to database
+// guess: loop through request body to get array of orders submitted
+app.post('/order', async (req, resp) => {
+    let reqBody = req.body;
+
+    //console.log(reqBody);
+    //console.log('this is cost type: ' + typeof reqBody.listOfPurchasedServices[0].cost);
+    //console.log('hello ' + Array.isArray([reqBody.listOfPurchasedServices]));
+
+    let newOrder = new Order({
+        id: uniqid(),
+        employeeName: reqBody.employeeName,
+        customerName: reqBody.customerName,
+        listOfPurchasedServices: reqBody.listOfPurchasedServices
+    })
+    await newOrder.save();
+    resp.send('Created');
 })
 
 
