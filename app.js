@@ -134,10 +134,6 @@ app.delete('/pedicure/:id', async (req, resp) =>  {
 app.post('/order', async (req, resp) => {
     let reqBody = req.body;
 
-    //console.log(reqBody);
-    //console.log('this is cost type: ' + typeof reqBody.listOfPurchasedServices[0].cost);
-    //console.log('hello ' + Array.isArray([reqBody.listOfPurchasedServices]));
-
     let newOrder = new Order({
         id: uniqid(),
         employeeName: reqBody.employeeName,

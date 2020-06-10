@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // for current order, fill out its select element 
         option.listOfPurchasedServices.forEach((option2) => {
-            console.log(option2.name + ' ' + option.customerName);
             let optionHTML2 = `<option value="">${option2.name} ... $${option2.cost}</option>`;
             optionList.insertAdjacentHTML('beforeend', optionHTML2);
         })

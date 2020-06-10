@@ -15,6 +15,7 @@ let removeServiceTab = document.getElementById('v-pills-remove-service');
 let editDetailsTab = document.getElementById('v-pills-edit-details');
 let viewOrdersTab = document.getElementById('v-pills-view-orders');
 
+// NOTE: Below is code for the add services admin page unless stated otherwise
 // selected tab in the add services page in the admin section
 let nailsTabSelected = document.querySelector('#nails-tab');
 let pedicureTabSelected = document.querySelector('#pedicure-tab');
@@ -38,7 +39,51 @@ pedicureTabSelected.addEventListener('click', function() {
     nailsTab.classList.remove('show');
     nailsTab.classList.remove('active');
 })
+// NOTE: end of add services page in admin section
 
+// NOTE: below is the start of the edit details page in admin section unless stated otherwise
+// selected tab variables in the edit details admin page under 'services'
+let servicesTabSelected = document.querySelector('#services-tab');
+let employeesTabSelected = document.querySelector('#employees-tab');
+let managersTabSelected = document.querySelector('#managers-tab');
+
+// actual tabs to display, will add/remove 'show' and 'active' class to tabs to show or hide tabs
+let servicesTab = document.querySelector('#editServicesTab');
+let employeesTab = document.querySelector('#editEmployeesTab');
+let managersTab = document.querySelector('#editManagersTab');
+
+// show edit services tab, hide the others
+servicesTabSelected.addEventListener('click', function() {
+    servicesTab.classList.add('show');
+    servicesTab.classList.add('active');
+    employeesTab.classList.remove('show');
+    employeesTab.classList.remove('active');
+    managersTab.classList.remove('show');
+    managersTab.classList.remove('active');
+})
+
+// show edit employees tab, hide the others
+employeesTabSelected.addEventListener('click', function() {
+    employeesTab.classList.add('show');
+    employeesTab.classList.add('active');
+    servicesTab.classList.remove('show');
+    servicesTab.classList.remove('active');
+    managersTab.classList.remove('show');
+    managersTab.classList.remove('active');
+})
+
+// show edit managers tab, hide the others
+managersTabSelected.addEventListener('click', function() {
+    managersTab.classList.add('show');
+    managersTab.classList.add('active');
+    employeesTab.classList.remove('show');
+    employeesTab.classList.remove('active');
+    servicesTab.classList.remove('show');
+    servicesTab.classList.remove('active');
+})
+// NOTE: end of edit details functionality
+
+// NOTE: button functionality of buttons on the admin page
 // when 'add employees' button is clicked, show add employee tab
 addEmpBtn.addEventListener('click', function() {
     displayCurrentTab(addEmpTab);
