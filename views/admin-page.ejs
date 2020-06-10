@@ -14,7 +14,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -30,9 +29,8 @@
         </div>
     </nav>
 
-    <!-- stuff here -->
+   <!-- tabs that will be the different sections of the page -->
     <div class="tab-content" id="v-pills-tabContent">
-
         <!-- first tab, the main buttons for admin -->
         <div class="tab-pane fade show active" id="v-pills-admin-main" role="tabpanel" aria-labelledby="v-pills-admin-main-tab">
             <div class="d-flex align-items-center admin-container">
@@ -51,6 +49,14 @@
                         </button>
                         <button type="button" id="removeServiceBtn" class="btn btn-danger col-2 admin-page-button ml-4">
                             Remove Services
+                        </button>
+                    </div>
+                    <div class="row justify-content-center mb-4">
+                        <button type="button" id="editDetailsBtn" class="btn btn-secondary col-2 admin-page-button mr-4">
+                            Edit Details
+                        </button>
+                        <button type="button" id="viewOrdersBtn" class="btn btn-warning col-2 admin-page-button ml-4">
+                            View Orders
                         </button>
                     </div>
                     <!-- buttons to add:
@@ -85,8 +91,7 @@
                         </div>
                         <div class="text-center">
                             <button class="btn btn-primary">Add New Employee</button>
-                        </div>
-                        
+                        </div>  
                     </form>
                 </div>
             </div>
@@ -145,8 +150,7 @@
                                 <!-- li elements will end up here, resembling current pedicure services  -->
                             </ul>
                         </div>
-                    </div>
-                    
+                    </div>  
                 </div>
                 <!-- right hand side of the add services page -->
                 <div class="col-6">
@@ -210,8 +214,30 @@
                 <div class="col"></div>
             </div>
         </div>
-    </div>
-    
+
+        <!-- 6th tab, edit details of services, employee name, or manager credentials -->
+        <!-- stuff for 6th tab goes here -->
+
+        <!-- 7th tab, viewing all orders in database -->
+        <div class="tab-pane fade" id="v-pills-view-orders" role="tabpanel" aria-labelledby="v-pills-view-orders-tab">
+            <div class="container row page-wrapper remove-service-block">
+                <h2>List of Orders</h2>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Ordered Services</th>
+                        <th scope="col">Total Cost of Order</th>
+                      </tr>
+                    </thead>
+                    <tbody class="currentOrders">
+                      <!-- <tr> tags will be entered here via getOrders.js -->
+                    </tbody>
+                  </table>
+            </div>
+        </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -223,6 +249,7 @@
     <script src="admin/getPedicure.js"></script>
     <script src="admin/addService.js"></script>
     <script src="admin/removeService.js"></script>
+    <script src="admin/getOrders.js"></script>
     <script src="admin/main.js"></script>
 </body>
 </html>

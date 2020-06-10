@@ -49,6 +49,12 @@ app.get('/employees', async (req, resp) => {
     resp.send(empOption);
 })
 
+// GET request to server, then database, for orders
+app.get('/orders', async (req, resp) => {
+    let orderOption = await Order.find();
+    resp.send(orderOption);
+})
+
 // post request receiving username and password, and if correct credentials, goes to admin page
 app.post('/admin-login', async (req, resp) => {
     let username = req.body.username;

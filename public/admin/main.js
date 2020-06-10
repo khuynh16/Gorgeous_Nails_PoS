@@ -1,13 +1,17 @@
+// variables containing the buttons on the admin page
 let addEmpBtn = document.querySelector('#addEmpBtn');
 let removeEmpBtn = document.querySelector('#removeEmpBtn');
 let addServiceBtn = document.querySelector('#addServiceBtn');
 let removeServiceBtn = document.querySelector('#removeServiceBtn');
+let viewOrdersBtn = document.querySelector('#viewOrdersBtn');
 
+// tabs responding to the sections that correspond to the above buttons
 let addEmpTab = document.getElementById('v-pills-add-employee');
 let removeEmpTab = document.getElementById('v-pills-remove-employee');
 let adminBtnsTab = document.getElementById('v-pills-admin-main');
 let addServiceTab = document.getElementById('v-pills-add-service');
 let removeServiceTab = document.getElementById('v-pills-remove-service');
+let viewOrdersTab = document.getElementById('v-pills-view-orders');
 
 // selected tab in the add services page in the admin section
 let nailsTabSelected = document.querySelector('#nails-tab');
@@ -53,6 +57,11 @@ removeServiceBtn.addEventListener('click', function() {
     displayCurrentTab(removeServiceTab);
 })
 
+// when 'view orders' button is clicked, show view orders tab
+viewOrdersBtn.addEventListener('click', function() {
+    displayCurrentTab(viewOrdersTab);
+})
+
 // add or remove 'show' and 'active' class from tabs, whether to be visible or not
 function displayCurrentTab(tab) {
 
@@ -62,23 +71,27 @@ function displayCurrentTab(tab) {
 
     // remove 'show' and 'active' classes from any tab that isn't the currently selected tab
     if (tab === addEmpTab) {
-         removeEmpTab.classList.remove('show');
-         removeEmpTab.classList.remove('active');
-         adminBtnsTab.classList.remove('show');
-         adminBtnsTab.classList.remove('active');
-         addServiceTab.classList.remove('show');
-         addServiceTab.classList.remove('active');
-         removeServiceTab.classList.remove('show');
-         removeServiceTab.classList.remove('active');
+        removeEmpTab.classList.remove('show');
+        removeEmpTab.classList.remove('active');
+        adminBtnsTab.classList.remove('show');
+        adminBtnsTab.classList.remove('active');
+        addServiceTab.classList.remove('show');
+        addServiceTab.classList.remove('active');
+        removeServiceTab.classList.remove('show');
+        removeServiceTab.classList.remove('active');
+        viewOrdersTab.classList.remove('show');
+        viewOrdersTab.classList.remove('active');
     } else if (tab === removeEmpTab) {
-         addEmpTab.classList.remove('show');
-         addEmpTab.classList.remove('active');
-         adminBtnsTab.classList.remove('show');
-         adminBtnsTab.classList.remove('active');
-         addServiceTab.classList.remove('show');
-         addServiceTab.classList.remove('active');
-         removeServiceTab.classList.remove('show');
-         removeServiceTab.classList.remove('active');
+        addEmpTab.classList.remove('show');
+        addEmpTab.classList.remove('active');
+        adminBtnsTab.classList.remove('show');
+        adminBtnsTab.classList.remove('active');
+        addServiceTab.classList.remove('show');
+        addServiceTab.classList.remove('active');
+        removeServiceTab.classList.remove('show');
+        removeServiceTab.classList.remove('active');
+        viewOrdersTab.classList.remove('show');
+        viewOrdersTab.classList.remove('active');
     } else if (tab === addServiceTab) {
         addEmpTab.classList.remove('show');
         addEmpTab.classList.remove('active');
@@ -88,6 +101,8 @@ function displayCurrentTab(tab) {
         adminBtnsTab.classList.remove('active');
         removeServiceTab.classList.remove('show');
         removeServiceTab.classList.remove('active');
+        viewOrdersTab.classList.remove('show');
+        viewOrdersTab.classList.remove('active');
     } else if (tab === removeServiceTab) {
         addEmpTab.classList.remove('show');
         addEmpTab.classList.remove('active');
@@ -97,6 +112,19 @@ function displayCurrentTab(tab) {
         adminBtnsTab.classList.remove('active');
         addServiceTab.classList.remove('show');
         addServiceTab.classList.remove('active');
+        viewOrdersTab.classList.remove('show');
+        viewOrdersTab.classList.remove('active');
+    } else if (tab === viewOrdersTab) {
+        addEmpTab.classList.remove('show');
+        addEmpTab.classList.remove('active');
+        removeEmpTab.classList.remove('show');
+        removeEmpTab.classList.remove('active');
+        adminBtnsTab.classList.remove('show');
+        adminBtnsTab.classList.remove('active');
+        addServiceTab.classList.remove('show');
+        addServiceTab.classList.remove('active');
+        removeServiceTab.classList.remove('show');
+        removeServiceTab.classList.remove('active');
     }
 }
 
