@@ -3,6 +3,7 @@ let addEmpBtn = document.querySelector('#addEmpBtn');
 let removeEmpBtn = document.querySelector('#removeEmpBtn');
 let addServiceBtn = document.querySelector('#addServiceBtn');
 let removeServiceBtn = document.querySelector('#removeServiceBtn');
+let editDetailsBtn = document.querySelector('#editDetailsBtn');
 let viewOrdersBtn = document.querySelector('#viewOrdersBtn');
 
 // tabs responding to the sections that correspond to the above buttons
@@ -11,6 +12,7 @@ let removeEmpTab = document.getElementById('v-pills-remove-employee');
 let adminBtnsTab = document.getElementById('v-pills-admin-main');
 let addServiceTab = document.getElementById('v-pills-add-service');
 let removeServiceTab = document.getElementById('v-pills-remove-service');
+let editDetailsTab = document.getElementById('v-pills-edit-details');
 let viewOrdersTab = document.getElementById('v-pills-view-orders');
 
 // selected tab in the add services page in the admin section
@@ -57,6 +59,11 @@ removeServiceBtn.addEventListener('click', function() {
     displayCurrentTab(removeServiceTab);
 })
 
+// when 'edit details' button is clicked, show edit details tab
+editDetailsBtn.addEventListener('click', function() {
+    displayCurrentTab(editDetailsTab);
+})
+
 // when 'view orders' button is clicked, show view orders tab
 viewOrdersBtn.addEventListener('click', function() {
     displayCurrentTab(viewOrdersTab);
@@ -79,6 +86,8 @@ function displayCurrentTab(tab) {
         addServiceTab.classList.remove('active');
         removeServiceTab.classList.remove('show');
         removeServiceTab.classList.remove('active');
+        editDetailsTab.classList.remove('show');
+        editDetailsTab.classList.remove('active');
         viewOrdersTab.classList.remove('show');
         viewOrdersTab.classList.remove('active');
     } else if (tab === removeEmpTab) {
@@ -90,6 +99,8 @@ function displayCurrentTab(tab) {
         addServiceTab.classList.remove('active');
         removeServiceTab.classList.remove('show');
         removeServiceTab.classList.remove('active');
+        editDetailsTab.classList.remove('show');
+        editDetailsTab.classList.remove('active');
         viewOrdersTab.classList.remove('show');
         viewOrdersTab.classList.remove('active');
     } else if (tab === addServiceTab) {
@@ -101,6 +112,8 @@ function displayCurrentTab(tab) {
         adminBtnsTab.classList.remove('active');
         removeServiceTab.classList.remove('show');
         removeServiceTab.classList.remove('active');
+        editDetailsTab.classList.remove('show');
+        editDetailsTab.classList.remove('active');
         viewOrdersTab.classList.remove('show');
         viewOrdersTab.classList.remove('active');
     } else if (tab === removeServiceTab) {
@@ -112,6 +125,21 @@ function displayCurrentTab(tab) {
         adminBtnsTab.classList.remove('active');
         addServiceTab.classList.remove('show');
         addServiceTab.classList.remove('active');
+        editDetailsTab.classList.remove('show');
+        editDetailsTab.classList.remove('active');
+        viewOrdersTab.classList.remove('show');
+        viewOrdersTab.classList.remove('active');
+    } else if (tab === editDetailsTab) {
+        addEmpTab.classList.remove('show');
+        addEmpTab.classList.remove('active');
+        removeEmpTab.classList.remove('show');
+        removeEmpTab.classList.remove('active');
+        adminBtnsTab.classList.remove('show');
+        adminBtnsTab.classList.remove('active');
+        addServiceTab.classList.remove('show');
+        addServiceTab.classList.remove('active');
+        removeServiceTab.classList.remove('show');
+        removeServiceTab.classList.remove('active');
         viewOrdersTab.classList.remove('show');
         viewOrdersTab.classList.remove('active');
     } else if (tab === viewOrdersTab) {
@@ -125,6 +153,8 @@ function displayCurrentTab(tab) {
         addServiceTab.classList.remove('active');
         removeServiceTab.classList.remove('show');
         removeServiceTab.classList.remove('active');
+        editDetailsTab.classList.remove('show');
+        editDetailsTab.classList.remove('active');
     }
 }
 
