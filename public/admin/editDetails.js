@@ -94,3 +94,46 @@ function resetInput() {
     editServiceCost.value = 'Select service...';
 }
 
+// update service if 'update service' button is clicked
+editServiceUpdateBtn.addEventListener('click', function(e) {
+    e.preventDefault();         // prevent default browser actions
+    let id;                     // id of currently selected service option
+
+    // nail option is selected
+    if (editServicePedicureOption.selectedIndex === 0) {
+        // id of currently selected nails option
+        id = editServiceNailOption.options[editServiceNailOption.selectedIndex].value;
+        updateService('nails', id);
+    // pedicure option is selected
+    } else if (editServiceNailOption.selectedIndex === 0) {
+        // id of currently selected pedicure option
+        id = editServicePedicureOption.options[editServicePedicureOption.selectedIndex].value;
+        updateService('pedicure', id);
+    }
+})
+
+// updates service name and cost in database (given values that user enters in input field)
+function updateService(type, id) {
+    let route;
+
+    // determine route that includes specific service id with type of service (nails or pedicure)
+    if (type === 'nails') {
+        route = 'http://localhost:3000/nails/' + id;
+    }
+    else if (type === 'pedicure') {
+        route = 'http://localhost:3000/pedicure/' + id;
+    }
+
+    // fetch api that sends request to put request, which updates database
+    fetch(route,  {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: editServiceName.value,
+                cost: editServiceCost.value
+            })
+        }).then((resp) => resp.text())
+        .then(() => window.history.go());
+}

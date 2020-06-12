@@ -129,6 +129,20 @@ app.delete('/pedicure/:id', async (req, resp) =>  {
     resp.send('Deleted!');
 })
 
+// update nail service (in edit details: service tab admin page)
+app.put('/nails/:id', async (req, resp) => {
+    let id = req.params.id;
+    await Nail_service.updateOne({id: id}, req.body);
+    resp.send('Updated!');
+})
+
+// update pedicure service (in edit details: pedicure tab admin page)
+app.put('/pedicure/:id', async (req, resp) => {
+    let id = req.params.id;
+    await Pedicure_service.updateOne({id: id}, req.body);
+    resp.send('Updated!');
+})
+
 // add order (in checkout page) to database
 // guess: loop through request body to get array of orders submitted
 app.post('/order', async (req, resp) => {
