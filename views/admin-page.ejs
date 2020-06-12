@@ -239,7 +239,7 @@
                         <div class="tab-pane fade show active" id="editServicesTab" role="tabpanel" aria-labelledby="edit-services-tab">
                             <div class="container row mt-3">
                                 <!-- left hand side of the edit details page of the services tab -->
-                                <div class="col-6">
+                                <div class="col-8">
                                     <h4 class="mt-4 mb-4 text-center">- Select a Service to Edit -</h4>
                                     <div class="row">
                                         <div class="col-6">
@@ -259,20 +259,20 @@
                                     </div>
                                 </div>
                                 <!-- right hand side of the edit details page of the services tab -->
-                                <div class="col-6">
+                                <div class="col-4">
                                     <form class="add-service-form">
                                         <!-- entering of new service name -->
                                         <div class="form-group">
                                             <label for="edit-service-name">New Name</label>
-                                            <input type="text" class="form-control" id="edit-service-name" placeholder="Select service...">
+                                            <input disabled type="text" class="form-control" id="edit-service-name" placeholder="Select service...">
                                         </div>
                                         <!-- entering  of new service cost -->
                                         <div class="form-group">
                                             <label for="edit-service-cost">New Cost (in USD $)</label>
-                                            <input type="text" class="form-control" id="edit-service-cost" placeholder="Select service...">
+                                            <input disabled type="text" class="form-control" id="edit-service-cost" placeholder="Select service...">
                                         </div>
                                         <div class="text-center">
-                                            <button class="btn btn-primary">Update Service</button>
+                                            <button disabled class="btn btn-primary" id="edit-service-btn">Update Service</button>
                                         </div>
                                     </form>
                                 </div>
@@ -360,6 +360,7 @@
     <script src="admin/addService.js"></script>
     <script src="admin/removeService.js"></script>
     <script src="admin/getOrders.js"></script>
+    <script src="admin/editDetails.js"></script>
     <script src="admin/main.js"></script>
 </body>
 </html>

@@ -25,4 +25,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         let serviceHTML = `<option class="id" value="${service.id}">${service.name} ... $${service.cost.toFixed(2)}</option>`;
         pedicure_select.insertAdjacentHTML('beforeend', serviceHTML);
     })
+
+    //NOTE: this section is to fill out pedicure select element on edit details: services admin page section
+    let pedicure3 = await getPedicure();
+    let pedicure_select2 = document.querySelector('.currentPedicure3');
+    pedicure3.forEach((service) => {
+        let serviceHTML = `<option class="id" value="${service.id}">${service.name} ... $${service.cost.toFixed(2)}</option>`;
+        pedicure_select2.insertAdjacentHTML('beforeend', serviceHTML);
+    })
 })

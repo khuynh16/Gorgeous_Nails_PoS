@@ -23,4 +23,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         let optionHTML = `<option class="id" value="${option.id}">${option.firstname} ${option.lastname}</option>`;
         employee_list2.insertAdjacentHTML('beforeend', optionHTML);
     })
+
+    //NOTE: this section is to fill out list on edit details: employees admin page section
+    let employee3 = await getEmployees();                                // current employees from database
+    let employee_list3 = document.querySelector('.currentEmployees3');   // option element of employees
+    // adding each employee from database into the option element
+    employee3.forEach((option) => {
+        let optionHTML = `<option class="id" value="${option.id}">${option.firstname} ${option.lastname}</option>`;
+        employee_list3.insertAdjacentHTML('beforeend', optionHTML);
+    })
 })

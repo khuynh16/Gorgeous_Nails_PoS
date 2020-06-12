@@ -25,4 +25,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         let serviceHTML = `<option class="id" value="${service.id}">${service.name} ... $${service.cost.toFixed(2)}</option>`;
         nails_select.insertAdjacentHTML('beforeend', serviceHTML);
     })
+
+    //NOTE: this section is to fill out nails select element on edit details: services admin page section
+    let nails3 = await getNails();
+    let nails_select2 = document.querySelector('.currentNails3');
+    nails3.forEach((service) => {
+        let serviceHTML = `<option class="id" value="${service.id}">${service.name} ... $${service.cost.toFixed(2)}</option>`;
+        nails_select2.insertAdjacentHTML('beforeend', serviceHTML);
+    })
 })
