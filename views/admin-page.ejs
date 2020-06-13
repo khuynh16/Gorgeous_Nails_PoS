@@ -104,7 +104,7 @@
                 <div class="col-6">
                     <h2>Current Employees</h2>
                     <select class="custom-select d-block w-100 mt-5 currentEmployees2" required>
-                        <option value="">Choose...</option>
+                        <option selected="true" disabled value="">Choose...</option>
                         <!-- employees from database will be entered here -->
                     </select>
                     <div class="text-center mt-5">
@@ -303,15 +303,15 @@
                                         <!-- entering of new service name -->
                                         <div class="form-group">
                                             <label for="edit-employee-fName">New First Name</label>
-                                            <input type="text" class="form-control" id="edit-employee-fName" placeholder="Select service...">
+                                            <input disabled type="text" class="form-control" id="edit-employee-fName" placeholder="Select service...">
                                         </div>
                                         <!-- entering  of new service cost -->
                                         <div class="form-group">
                                             <label for="edit-employee-lName">New Last Name</label>
-                                            <input type="text" class="form-control" id="edit-employee-lName" placeholder="Select service...">
+                                            <input disabled type="text" class="form-control" id="edit-employee-lName" placeholder="Select service...">
                                         </div>
                                         <div class="text-center">
-                                            <button class="btn btn-primary">Update Employee Details</button>
+                                            <button disabled class="btn btn-primary" id="edit-employee-btn">Update Employee Details</button>
                                         </div>
                                     </form>
                                 </div>
@@ -360,7 +360,8 @@
     <script src="admin/addService.js"></script>
     <script src="admin/removeService.js"></script>
     <script src="admin/getOrders.js"></script>
-    <script src="admin/editDetails.js"></script>
+    <script src="admin/editServiceDetails.js"></script>
+    <script src="admin/editEmployeesDetails.js"></script>
     <script src="admin/main.js"></script>
 </body>
 </html>

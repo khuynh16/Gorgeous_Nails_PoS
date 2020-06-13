@@ -72,14 +72,14 @@
                 <div class="col-md-6 mb-3">
                     <label for="nails" class="labelText">Nails</label>
                     <select class="custom-select d-block w-100 d-flex justify-content-between nailsList" id="nails" required>
-                        <option value="default">Choose...</option>
+                        <option selected="true" disabled value="default">Choose...</option>
                         <!-- other options from database are entered here -->
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="pedicure" class="labelText">Pedicure</label>
                     <select class="custom-select d-block w-100" id="pedicure" required>
-                        <option value="default">Choose...</option>
+                        <option selected="true" disabled value="default">Choose...</option>
                         <!-- other options from database are entered here -->
                     </select>
                 </div>
@@ -97,7 +97,29 @@
                 
                 <hr class="mb-4">
                 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Submit Order</button>
+                <button class="btn btn-primary btn-lg btn-block" data-target="#submit-order" data-toggle="modal" type="submit">Submit Order</button>
+
+                <!-- Modal to display any errors that user needs to correct before submitting -->
+                <div class="modal fade" id="submit-order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Unable to submit due to the following issues:</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="list-of-issues">
+                                    <!-- list of issues that order cannot submit will be here -->
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
             </div>
         </div>

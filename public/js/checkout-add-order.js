@@ -81,7 +81,7 @@ $(document).ready(function() {
         productName = selectedPedicureOption.substr(0, selectedPedicureOption.indexOf('...') - 1);
 
         // if productName is the first default value, do nothing; else, do all computations below
-        if (productName == 'Choose') {
+        if (productName === 'Choose') {
             return;
         } else {
             // get just cost value from option (should be length of whole string except $[cost here])

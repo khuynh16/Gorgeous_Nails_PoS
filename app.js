@@ -143,6 +143,13 @@ app.put('/pedicure/:id', async (req, resp) => {
     resp.send('Updated!');
 })
 
+// update employee (in edit details: employee tab admin page)
+app.put('/employees/:id', async (req, resp) => {
+    let id = req.params.id;
+    await Employee.updateOne({id: id}, req.body);
+    resp.send('Updated!');
+})
+
 // add order (in checkout page) to database
 // guess: loop through request body to get array of orders submitted
 app.post('/order', async (req, resp) => {
