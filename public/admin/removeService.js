@@ -4,6 +4,8 @@ let nailsOption = document.querySelector('.currentNails2');                 // n
 let pedicureOption = document.querySelector('.currentPedicure2');           // pedicure select element in remove services
 let id;                                                                     // unique id of selected option
 
+let modal = document.querySelector('#remove-service-modal');       // modal displaying issue in removing service
+
 servicesBlock.addEventListener('click', function(e) {
     if(e.target.classList.contains('remove-service')) {
         
@@ -15,8 +17,13 @@ servicesBlock.addEventListener('click', function(e) {
         // if both select elements for nails and pedicure are both on default value ('Choose...'), display error message
         // if one is default and the other isn't, remove the appropriate service
         if ((nailsList.selectedIndex === 0) && (pedicureList.selectedIndex === 0)) {
-            alert('Need to select a service from either category before removing.');
+           
+            // nothing happens here but modal will be displayed, mentioning an error in user input
+
         } else {
+            //hide modal from popping up
+            modal.remove();
+
             // nail option selected to be removed
             if (nailsList.selectedIndex !== 0) {
                 // unique id to selected nails option

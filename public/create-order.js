@@ -52,12 +52,12 @@ submitOrderBtn.addEventListener('submit', function(e) {
             modalMessage.insertAdjacentHTML('beforeend', messageIssue);
         }
         if (hasCustomer === false) {
-            messageIssue = `<li>Need to enter customer name.</li`;
+            messageIssue = `<li>Need to enter customer name.</li>`;
             modalMessage.insertAdjacentHTML('beforeend', messageIssue);
         }
         if (atLeastOneOrder === false) {
             console.log('here');
-            messageIssue = `<li>Need to enter at least one order.</li`;
+            messageIssue = `<li>Need to enter at least one order.</li>`;
             modalMessage.insertAdjacentHTML('beforeend', messageIssue);
         }
     // there are no issues; order can be submitted to the database
