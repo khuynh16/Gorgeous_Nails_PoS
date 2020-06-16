@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     nails.forEach((service) => {
         let serviceHTML =   `<li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <h6 class="my-0 px-0 col-9">${service.name}</h6>
-                                <span class="text-muted col-2 pl-0 pCost">$${service.cost.toFixed(2)}</span>
+                                <span class="text-muted col-2 mr-0 pCost">$${service.cost.toFixed(2)}</span>
                             </li>`;
         nails_tab.insertAdjacentHTML('beforeend', serviceHTML);
     })

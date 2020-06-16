@@ -8,6 +8,7 @@ $(document).ready(function() {
     let numItems = $('.cartNumItems');                  // total number of items in order 
     let yourCartText = $('.yourCart');                  // 'your cart' text on checkout page
     let totalCost = $('.totalCost');                    // total cost of order
+    let addServiceModal = $('#service-to-add');
 
     let selectedNailOption;         // option value current employee has selected
     let selectedPedicureOption;     // option value current employee has selected
@@ -17,110 +18,62 @@ $(document).ready(function() {
     let sliceLengthForCost;         // used in calculation of displaying only cost
     let numOfItemsCounter;          // counter to hold number of current selected items in checkout page
 
-    // when the add nail order button is clicked
-    addNailsOrderButton.on('click', function() {
-        // get text value of selected option
-        selectedNailOption = $( '#nails option:selected' ).text();
+    
 
-        // get just product name from option
-        productName = selectedNailOption.substr(0, selectedNailOption.indexOf('...') - 1);
+    $(document).on('click', '.service-group li', function() {
 
-        // if productName is the first default value, do nothing; else, do all computations below
-        if (productName == 'Choose') {
-            return;
-        } else {
-            // get just cost value from option (should be length of whole string except $[cost here])
-            lengthWithoutCost = selectedNailOption.substr(0, selectedNailOption.indexOf('$')).length;
+        // get string value of all the classes of selected li element, should either includes 'isNails' or 'isPedicure'
+        let checkoutTab = $(this)[0].className;
+        let elem;                                                   // html element to be created and put into order
 
-            // should be the length to use in slice() function to extract just the $[cost] text
-            sliceLengthForCost = selectedNailOption.length - lengthWithoutCost;
+        // get product name of selected option
+        productName = $(this)[0].innerHTML;
+        productName = productName.substr(0, productName.indexOf('</h6>'));
+        productName = productName.substr(productName.indexOf('pName">') + 7);
 
-            // text of just the product cost
-            productCost = selectedNailOption.slice(selectedNailOption.length - sliceLengthForCost);
+        // get product cost of selected option
+        productCost = $(this)[0].innerHTML;
+        productCost = productCost.substr(0, productCost.indexOf('</span>'));
+        productCost = productCost.substr(productCost.indexOf('pCost">') + 8);
 
+        // determines if selected element is nails or pedicure to follow up with appropriate actions
+        if (checkoutTab.includes('isNails')) {
             // newly created list item; to be entered into already existing list
-            let elem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
+            elem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
                             <input type="hidden" class="cName" value="nails">
                             <h6 class="my-0 px-0 col-9 pName">${productName}</h6>
-                            <span class="text-muted col-2 pl-0 pCost">${productCost}</span>
+                            <span class="text-muted col-2 pl-0 pCost">$${productCost}</span>
                             <button type="button" class="btn btn-danger btn-sm deleteBtn col-1">x</button>
                         </li>`;
 
-            // adds newly created list order item to the one before 'total'
-            selectedOrders.find(' > li:nth-last-child(1)').before(elem);
-
-            // returns bootstrap options to original choice
-            // chooses option with class 'default' and refreshes to that option after button is clicked
-            nailsOptions.val('default');
-
-            // assign num items counter to current number of items selected in checkout page 
-            numOfItemsCounter = numItems.text();
-
-            // increase value of current num items counter when option is selected
-            numOfItemsCounter++;
-
-            // change text on checkout page to resemble new number of options in checkout page
-            numItems.text(numOfItemsCounter);
-
-            // if number of items is not empty, change 'Your cart (empty)' to 'Your cart'
-            if (numOfItemsCounter > 0) {
-                yourCartText.text('Your cart');
-            }
-        }
-
-        // function that calculates new total cost and updates checkout page total cost value
-        addToTotalCost(totalCost, productCost);
-    })
-
-    // when the add pedicure order button is clicked
-    addPedicureOrderButton.on('click', function() {
-        // get text value of selected option
-        selectedPedicureOption = $( '#pedicure option:selected' ).text();
-
-        // get just product name from option
-        productName = selectedPedicureOption.substr(0, selectedPedicureOption.indexOf('...') - 1);
-
-        // if productName is the first default value, do nothing; else, do all computations below
-        if (productName === 'Choose') {
-            return;
-        } else {
-            // get just cost value from option (should be length of whole string except $[cost here])
-            lengthWithoutCost = selectedPedicureOption.substr(0, selectedPedicureOption.indexOf('$')).length;
-
-            // should be the length to use in slice() function to extract just the $[cost] text
-            sliceLengthForCost = selectedPedicureOption.length - lengthWithoutCost;
-
-            // text of just the product cost
-            productCost = selectedPedicureOption.slice(selectedPedicureOption.length - sliceLengthForCost);
-
+        } else if (checkoutTab.includes('isPedicure')) {
             // newly created list item; to be entered into already existing list
-            let elem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
+            elem = `<li class="list-group-item d-flex justify-content-between lh-condensed">
                             <input type="hidden" class="cName" value="pedicure">
                             <h6 class="my-0 px-0 col-9 pName">${productName}</h6>
-                            <span class="text-muted col-2 pl-0 pCost">${productCost}</span>
+                            <span class="text-muted col-2 pl-0 pCost">$${productCost}</span>
                             <button type="button" class="btn btn-danger btn-sm deleteBtn col-1">x</button>
                         </li>`;
+        }
 
-            // adds newly created list order item to the one before 'total'
-            selectedOrders.find(' > li:nth-last-child(1)').before(elem);
+        // adds newly created list order item to the one before 'total'
+        selectedOrders.find(' > li:nth-last-child(1)').before(elem);
 
-            // returns bootstrap options to original choice
-            // chooses option with class 'default' and refreshes to that option after button is clicked
-            pedicureOptions.val('default');
+        // close modal after adding a service to order
+        addServiceModal.modal('toggle');
 
-            // assign num items counter to current number of items selected in checkout page 
-            numOfItemsCounter = numItems.text();
+        // assign num items counter to current number of items selected in checkout page 
+        numOfItemsCounter = numItems.text();
 
-            // increase value of current num items counter when option is selected
-            numOfItemsCounter++;
+        // increase value of current num items counter when option is selected
+        numOfItemsCounter++;
 
-            // change text on checkout page to resemble new number of options in checkout page
-            numItems.text(numOfItemsCounter);
+        // change text on checkout page to resemble new number of options in checkout page
+        numItems.text(numOfItemsCounter);
 
-            // if number of items is not empty, change 'Your cart (empty)' to 'Your cart'
-            if (numOfItemsCounter > 0) {
-                yourCartText.text('Your cart');
-            }
+        // if number of items is not empty, change 'Your cart (empty)' to 'Your cart'
+        if (numOfItemsCounter > 0) {
+            yourCartText.text('Your cart');
         }
 
         // function that calculates new total cost and updates checkout page total cost value
@@ -133,7 +86,7 @@ $(document).ready(function() {
         let t = parseFloat(tCost.text().substring(1, tCost.text().length));
 
         // int value of current product cost 
-        let p = parseFloat(pCost.substring(1, pCost.length));
+        let p = parseFloat(pCost);
 
         // change total cost on checkout page to include current service item
         totalCost.text('$' + (t + p).toFixed(2));

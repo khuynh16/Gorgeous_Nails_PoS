@@ -5,28 +5,19 @@ let editServiceName = document.querySelector('#edit-service-name');             
 let editServiceCost = document.querySelector('#edit-service-cost');             // service cost input field
 let editServiceUpdateBtn = document.querySelector('#edit-service-btn');         // update service button
 
-// disables one list group when the other is selected
-function disableSelectOption(service1, service2) {
-    if(service1.value) {
-        service2.disabled = true;
-    } else {
-        service2.disabled = false;
-    }
-}
-
 // event listener for nail option, disabling pedicure box if nail option is selected
 editServiceNailOption.addEventListener('change', function() {
             
     // if currently selected option isn't default, disable pedicure option selection and enable input fields
     if (editServiceNailOption.selectedIndex !== 0) {
         disableSelectOption(this, editServicePedicureOption);
-        enableItems();
-        fillInput('nails');
+        enableServiceItems();
+        fillServiceInput('nails');
     // if currently selected option is default, enable pedicure option selection and disable input fields
     } else {
         editServicePedicureOption.disabled = false;
-        disableItems();
-        resetInput();
+        disableServiceItems();
+        resetServiceInput();
     }
 })
 
@@ -36,32 +27,41 @@ editServicePedicureOption.addEventListener('change', function() {
     // if currently selected option isn't default, disable nail option selection and enable input fields
     if (editServicePedicureOption.selectedIndex !== 0) {
         disableSelectOption(this, editServiceNailOption);
-        enableItems();
-        fillInput('pedicure');
+        enableServiceItems();
+        fillServiceInput('pedicure');
     // if currently selected option is default, enable pedicure option selection and disable input fields
     } else {
         editServiceNailOption.disabled = false;
-        disableItems();
-        resetInput();
+        disableServiceItems();
+        resetServiceInput();
     }  
 })
 
+// disables one list group when the other is selected
+function disableSelectOption(service1, service2) {
+    if(service1.value) {
+        service2.disabled = true;
+    } else {
+        service2.disabled = false;
+    }
+}
+
 // enables service cost, service name, and update service fields
-function enableItems() {
+function enableServiceItems() {
     editServiceName.disabled = false;
     editServiceCost.disabled = false;
     editServiceUpdateBtn.disabled = false;
 }
 
 // disables service cost, service name, and update service fields
-function disableItems() {
+function disableServiceItems() {
     editServiceName.disabled = true;
     editServiceCost.disabled = true;
     editServiceUpdateBtn.disabled = true;
 }
 
 // fills in text inputs on right side of page with the currently selected option (from either nails or pedicure)
-function fillInput(value) {
+function fillServiceInput(value) {
 
     let text;       // text value of selected option; includes service name and cost      
     let name;       // to hold just the name of service
@@ -89,7 +89,7 @@ function fillInput(value) {
 
 // changes input text fields back to default ('Select service...') when user goes back to default select option
 // in either nails or pedicure
-function resetInput() {
+function resetServiceInput() {
     editServiceName.value = 'Select service...';
     editServiceCost.value = 'Select service...';
 }

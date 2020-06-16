@@ -69,4 +69,19 @@ select.selector .cost-in-list {
     align-items: center;
 }
 
+/* example of styling for later */
+#nails li a, #pedicure li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+#nails li:hover, #pedicure li:hover {
+    /* border: 1px solid #669999; */
+    background-color: #e0ebeb;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 

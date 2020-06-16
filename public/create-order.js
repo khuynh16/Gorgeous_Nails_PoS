@@ -56,7 +56,6 @@ submitOrderBtn.addEventListener('submit', function(e) {
             modalMessage.insertAdjacentHTML('beforeend', messageIssue);
         }
         if (atLeastOneOrder === false) {
-            console.log('here');
             messageIssue = `<li>Need to enter at least one order.</li>`;
             modalMessage.insertAdjacentHTML('beforeend', messageIssue);
         }

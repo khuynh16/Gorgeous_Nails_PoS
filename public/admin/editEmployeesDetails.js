@@ -9,31 +9,31 @@ editEmpFullName.addEventListener('change', function() {
 
     // if currently selected option isn't default, disable nail option selection and enable input fields
     if (editEmpFullName.selectedIndex !== 0) {
-        enableItems();
-        fillInput();
+        enableEmployeeItems();
+        fillEmployeeInput();
     // if currently selected option is default, enable pedicure option selection and disable input fields
     } else {
-        disableItems();
-        resetInput();
+        disableEmployeeItems();
+        resetEmployeeInput();
     }  
 })
 
 // enables employee first name, last name, and update employee button
-function enableItems() {
+function enableEmployeeItems() {
     editEmpFirstName.disabled = false;
     editEmpLastName.disabled = false;
     editEmpUpdateBtn.disabled = false;
 }
 
 // disables employee first name, last name, and update employee button
-function disableItems() {
+function disableEmployeeItems() {
     editEmpFirstName.disabled = true;
     editEmpLastName.disabled = true;
     editEmpUpdateBtn.disabled = true;
 }
 
 // fills in text inputs on right side of page with the currently selected employee first name and last name
-function fillInput() {
+function fillEmployeeInput() {
 
     let text;       // text value of selected option, includes both first and last name     
     let fName;       // to hold first name of employee
@@ -52,7 +52,7 @@ function fillInput() {
 }
 
 // changes input text fields back to default ('Select employee...') when user goes back to default select option
-function resetInput() {
+function resetEmployeeInput() {
     editEmpFirstName.value = 'Select employee...';
     editEmpLastName.value = 'Select employee...';
 }
