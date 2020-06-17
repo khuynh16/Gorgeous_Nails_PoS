@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         nails_list.insertAdjacentHTML('beforeend', optionHTML);
     })
 
-    // retrieve pedicure services from database to fill out option element in checkout-page.html
+    // retrieve pedicure services from database to fill out pedicure tab in checkout-page.html
     let pedicure = await getPedicure();                           // current pedicure services from database
     let pedicure_list = document.querySelector('#pedicure');      // option element of pedicure services
 

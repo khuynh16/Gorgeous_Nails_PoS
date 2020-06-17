@@ -72,11 +72,11 @@
 
                     <div class="col"></div>
                     <div class="col-md-8 mb-3 text-center">
-                        <button type="submit" class="btn btn-info" id="select-service-to-add" data-target="#service-to-add" data-toggle="modal">Select Service to Add</button>
+                        <button type="button" class="btn btn-info" id="select-service-to-add" data-target="#service-to-add" data-toggle="modal">Select Service to Add</button>
                     </div>
                     <div class="col"></div>
 
-                    <!-- Modal to display any errors that user needs to correct before submitting -->
+                    <!-- modal to display the possible options that employee/manager can add to checkout order -->
                     <div class="modal" id="service-to-add" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -126,41 +126,11 @@
                             </div>
                         </div>
                     </div>
-
-                    
-                    <!-- <div class="col-md-6 mb-3">
-                        <label for="nails" class="labelText">Nails</label>
-                        <select class="custom-select d-block w-100 d-flex justify-content-between nailsList" id="nails" required>
-                            <option selected="true" disabled value="default">Choose...</option> -->
-                            <!-- other options from database are entered here -->
-                        <!-- </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="pedicure" class="labelText">Pedicure</label>
-                        <select class="custom-select d-block w-100" id="pedicure" required>
-                            <option selected="true" disabled value="default">Choose...</option> -->
-                            <!-- other options from database are entered here -->
-                        <!-- </select>
-                    </div> -->
-
-                    
-
-
-                
-                </div>
-
-                <div class="row">
-                    <!-- <div class="col-md-6 mb-3 text-center">
-                        <button type="button" class="btn btn-info" id="addNailsOrder">Add Nails Order</button>
-                    </div>
-                    <div class="col-md-6 mb-3 text-center">
-                        <button type="button" class="btn btn-info" id="addPedicureOrder">Add Pedicure Order</button>
-                    </div> -->
                 </div>
                 
                 <hr class="mb-4">
                 
-                <button class="btn btn-primary btn-lg btn-block" data-target="#submit-order" data-toggle="modal" type="submit">Submit Order</button>
+                <button class="btn btn-primary btn-lg btn-block" id="submitOrder" data-target="#submit-order" data-toggle="modal" type="submit">Submit Order</button>
 
                 <!-- Modal to display any errors that user needs to correct before submitting -->
                 <div class="modal" id="submit-order" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -183,6 +153,30 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- order confirmation modal; displays when order is about to be submitted -->
+                <div class="modal" id="order-confirm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content tester">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Confirm the following order:</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="order-details pl-0">
+                                    <!-- order dtails will be here -->
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="confirmed">Confirm order</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="denied">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </form>
             </div>
         </div>

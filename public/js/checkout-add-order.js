@@ -1,24 +1,13 @@
 $(document).ready(function() {
-
-    let addNailsOrderButton = $('#addNailsOrder');      // button of adding nail order
-    let addPedicureOrderButton = $('#addPedicureOrder');
     let selectedOrders = $('.selected-orders');         // list of selected orders on the right side
-    let nailsOptions = $('#nails');                     // option list of nails 
-    let pedicureOptions = $('#pedicure');               // option list of pedicure
     let numItems = $('.cartNumItems');                  // total number of items in order 
     let yourCartText = $('.yourCart');                  // 'your cart' text on checkout page
     let totalCost = $('.totalCost');                    // total cost of order
     let addServiceModal = $('#service-to-add');
 
-    let selectedNailOption;         // option value current employee has selected
-    let selectedPedicureOption;     // option value current employee has selected
     let productName;                // name of product
     let productCost;                // cost of product
-    let lengthWithoutCost;          // length of selectedNailOption without "... $[cost here]" length
-    let sliceLengthForCost;         // used in calculation of displaying only cost
     let numOfItemsCounter;          // counter to hold number of current selected items in checkout page
-
-    
 
     $(document).on('click', '.service-group li', function() {
 
