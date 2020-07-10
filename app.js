@@ -184,5 +184,8 @@ app.get('/admin-employees', (req, resp) => {
 // connects to the index.html file and loads it
 app.use(express.static('public'));
 
+
+let port = process.env.PORT || 3000;
+
 // prints out message signaling server is live
-app.listen(3000, ()=> console.log('Listening...'));
+app.listen(port, ()=> console.log(`Listening ${port}...`));
