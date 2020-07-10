@@ -19,7 +19,7 @@ let Order = require('./models/orders').Order;
 // unique id package
 let uniqid = require('uniqid');
 
-mongoose.connect('mongodb://localhost/gorgeous_nails', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://kelvin:pass1234@gorgeousnailscluster-8aaon.mongodb.net/gorgeous_nails', { useNewUrlParser: true });
 
 // recognize the incoming request object as a JSON object
 // needed for app.post to work
