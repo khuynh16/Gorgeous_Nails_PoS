@@ -5,3 +5,5 @@ Utilizes HTML, CSS, JavaScript, JQuery, MongoDB, NodeJS.
 
 Also will utilized Heroku to host the nodejs application.
 Still a work in progress.
+
+7/09/2020: Hosted at https://gorgeousnails.herokuapp.com/
