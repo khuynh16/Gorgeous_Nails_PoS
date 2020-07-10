@@ -5,7 +5,7 @@ let lastName = document.querySelector('#last-name');
 addEmp.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3000/employees', {
+    fetch('/employees', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'

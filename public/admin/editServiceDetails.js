@@ -118,10 +118,10 @@ function updateService(type, id) {
 
     // determine route that includes specific service id with type of service (nails or pedicure)
     if (type === 'nails') {
-        route = 'http://localhost:3000/nails/' + id;
+        route = '/nails/' + id;
     }
     else if (type === 'pedicure') {
-        route = 'http://localhost:3000/pedicure/' + id;
+        route = '/pedicure/' + id;
     }
 
     // fetch api that sends request to put request, which updates database

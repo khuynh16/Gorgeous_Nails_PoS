@@ -27,8 +27,8 @@ addService.addEventListener('submit', function(e) {
 // returns route to correct url, depending on what category user selects to add new service in
 function route(service) {
     if (service === 'Nails') {
-        return 'http://localhost:3000/nails';
+        return '/nails';
     } else {
-        return 'http://localhost:3000/pedicure';
+        return '/pedicure';
     }
 }

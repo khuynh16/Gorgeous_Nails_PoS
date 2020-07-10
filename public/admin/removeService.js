@@ -29,7 +29,7 @@ servicesBlock.addEventListener('click', function(e) {
                 // unique id to selected nails option
                 id = nailsList.options[nailsList.selectedIndex].value;
 
-                fetch('http://localhost:3000/nails/' + id, {
+                fetch('/nails/' + id, {
                 method: 'DELETE'
                 }).then((resp) => resp.text())
                 .then(() => window.history.go());
@@ -37,7 +37,7 @@ servicesBlock.addEventListener('click', function(e) {
                 // unique id to selected pedicure option
                 id = pedicureList.options[pedicureList.selectedIndex].value;
 
-                fetch('http://localhost:3000/pedicure/' + id, {
+                fetch('/pedicure/' + id, {
                 method: 'DELETE'
                 }).then((resp) => resp.text())
                 .then(() => window.history.go());

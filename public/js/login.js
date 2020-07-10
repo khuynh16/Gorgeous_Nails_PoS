@@ -9,7 +9,7 @@ signInForm.addEventListener('submit', function(e) {
     let password = document.getElementById('sign-in-password').value;       // password variable from form
 
     // fetch api for admin-login page
-    fetch('http://localhost:3000/admin-login', {
+    fetch('/admin-login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

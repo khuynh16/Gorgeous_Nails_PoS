@@ -19,7 +19,7 @@ employeesBlock.addEventListener('click', function(e) {
             // id of currently selected employee when chosen
             let id = empList.options[empList.selectedIndex].value;
 
-            fetch('http://localhost:3000/employees/' + id, {
+            fetch('/employees/' + id, {
                 method: 'DELETE'
             }).then((resp) => resp.text())
             .then(() => window.history.go());

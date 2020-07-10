@@ -63,7 +63,7 @@ editEmpUpdateBtn.addEventListener('click', function(e) {
     let id = editEmpFullName.options[editEmpFullName.selectedIndex].value;
 
     // fetch api that sends request to put request, which updates database
-    fetch('http://localhost:3000/employees/' + id,  {
+    fetch('/employees/' + id,  {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

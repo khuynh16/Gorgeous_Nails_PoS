@@ -174,7 +174,7 @@ submitOrderBtn.addEventListener('click', function(e) {
             // customer name
             customerName = customerName.value;
 
-            fetch('http://localhost:3000/order', {
+            fetch('/order', {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json'
