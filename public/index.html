@@ -4,20 +4,24 @@
 	<meta charset="UTF-8">
     <title>Home Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/home-and-admin-page.css">
+    <link rel="stylesheet" href="css/home-and-admin-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="d-flex align-items-center vh-100">
-        <div class="container">
+        <div class="container mainContent">
             <div class="row justify-content-center title-row">
-                <img src="./images/logo-4.png" alt="logo" class="main-logo">
+                <h1 id="titleName">Gorgeous Nails</h1>
             </div>
+            <!-- <p class="whiteColor"></p> -->
+            <p class="whiteLine"></p>
             <div class="row justify-content-center button-row">
-                <button onclick="window.location.href='checkout-page.html'" type="button" class="btn btn-primary col-2 home-page-button mr-4">
+                <button onclick="window.location.href='checkout-page.html'" type="button" class="toCheckoutBtn hvr-underline-from-left col-2 home-page-button mr-4">
                     To Checkout
                 </button>
-                <button onclick="window.location.href='admin-login'" type="button" class="btn btn-success col-2 home-page-button ml-4">
+                <button onclick="window.location.href='admin-login'" type="button" class="toAdminPageBtn hvr-underline-from-left col-2 home-page-button ml-4">
                     To Admin Login
                 </button>
             </div>
