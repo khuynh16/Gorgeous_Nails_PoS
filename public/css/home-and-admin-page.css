@@ -45,7 +45,7 @@ body {
     background: rgb(0, 0, 0); /* fallback color */
     background: rgba(0, 0, 0, 0.7);
     padding: 10px; 
-    height: 80%;
+    height: 85%;
     border-radius: 70px;
     display: flex;
     justify-content: center;
