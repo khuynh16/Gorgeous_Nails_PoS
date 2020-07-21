@@ -1,5 +1,8 @@
 .checkout-page {
-    margin-top: 60px;
+    margin-top: 80px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* flex-direction: column; */
 }
 
 select.selector .cost-in-list {
@@ -26,7 +29,7 @@ select.selector .cost-in-list {
 }
 
 .login-container {
-	margin-top: 50px;
+	margin-top: 80px;
 	padding: 20px 15px 30px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px #ccc;
