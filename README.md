@@ -61,3 +61,29 @@ This project utilizes __HTML, CSS, JavaScript, JQuery, Bootstrap, MongoDB__ and 
 
 <img src="images/add-employee.png" width="100%">
 
+#### Removing employee from database
+
+<img src="images/remove-employee.png" width="100%">
+
+#### Adding new service to database
+
+<img src="images/add-new-service.png" width="100%">
+
+#### Removing service from database
+
+<img src="images/remove-service.png" width="100%">
+
+#### Edit service details in database
+
+<img src="images/edit-service.png" width="100%">
+
+#### Edit employee details in database
+
+<img src="images/edit-employee.png" width="100%">
+
+#### View all orders placed in database
+
+<img src="images/view-orders.png" width="100%">
+
+
+
