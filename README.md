@@ -4,6 +4,7 @@
 - [Project Link](#project-link)
 - [Functionality](#functionality)
 - [Software Technologies](#software-technologies)
+- [Images of Project](#images-of-project)
 
 # Gorgeous Nails Point-of-Sales System
 
@@ -34,4 +35,29 @@ The project is hosted on Heroku at: https://gorgeousnails.herokuapp.com/
 
 This project utilizes __HTML, CSS, JavaScript, JQuery, Bootstrap, MongoDB__ and __NodeJS__. This project is currently hosted on __Heroku.__
 
+## Images of Project
+  
+#### Home page   
+
+<img src="images/homepage.png" width="100%">
+
+#### Checkout (where employees (and manager) can checkout customers)
+
+<img src="images/checkout.png" width="100%">
+
+#### Example of filled out order 
+
+<img src="images/filled-out-order.png" width="100%">
+
+#### Admin login page
+
+<img src="images/admin-page.png" width="100%">
+
+#### Admin home page
+
+<img src="images/admin-home.png" width="100%">
+
+#### Adding new employee to database
+
+<img src="images/add-employee.png" width="100%">
 
